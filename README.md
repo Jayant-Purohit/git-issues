@@ -9,6 +9,6 @@ Created using JQuery, SASS. Uses Jquery plugin "typeahead" to show suggestions f
 # Scripts
 ```sh
     $ npm install
-    $ bower instll
+    $ bower install
     $ npm start
 ```
