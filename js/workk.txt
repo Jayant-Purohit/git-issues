@@ -1,0 +1,65 @@
+var arr = [];
+$('.js-typeahead').typeahead({
+	input: ".js-typeahead",
+	minLength: 3,
+	maxLength: 10,
+	maxItem:10,
+	hint: true,
+	debug: false,
+	display: ["name"],
+	selector: {
+		container: "typeahead__container",
+		result: "typeahead__result",
+		list: "typeahead__list",
+		group: "typeahead__group",
+		item: "typeahead__item",
+		empty: "typeahead__empty",
+		display: "typeahead__display",
+		query: "typeahead__query",
+		filter: "typeahead__filter",
+		filterButton: "typeahead__filter-button",
+		dropdown: "typeahead__dropdown",
+		dropdownItem: "typeahead__dropdown-item",
+		labelContainer: "typeahead__label-container",
+		label: "typeahead__label",
+		button: "typeahead__button",
+		backdrop: "typeahead__backdrop",
+		hint: "typeahead__hint",
+		cancelButton: "typeahead__cancel-button"
+	},
+	backdrop: {
+        "background-color": "#fff"
+    },
+    template: function (query, item) {
+ 
+        var color = "#777";
+ 
+        return "<li>{{id}}</li>"
+    },
+
+
+	dynamic: true,
+	source: {
+		groupName: {
+			ajax: function (query) {
+				return {
+					type: "GET",
+					url: "https://api.github.com/search/repositories",
+					data: {
+						q: "{{query}}"
+					},
+					callback: {
+						done: function (data) {		
+							arr = data.items;
+							return arr;
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+
+
+});
