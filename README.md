@@ -6,8 +6,6 @@ Created using JQuery, SASS. Uses Jquery plugin "typeahead" to show suggestions f
   - Node
   - Bower
 
-
-
 # Scripts
 ```sh
     $ npm install
