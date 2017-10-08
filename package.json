@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+
+    
+    "bower install"
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp serve"
   },
